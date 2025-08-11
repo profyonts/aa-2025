@@ -1,8 +1,0 @@
-{
-  "name": "x86-64 Linux ASM",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "features": {
-    "ghcr.io/devcontainers/features/common-utils:2": {}
-  },
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y nasm build-essential gdb strace make"
-}
