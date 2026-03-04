@@ -1,5 +1,5 @@
-# equates to assign symbolic syscall names to their numbers
-# =========================================================
+# equates to assign symbolic syscall names to their numbers - specify input ; output registers
+# ============================================================================================
 .eqv    PrintInt        1       # a0 = integer to print; n/a
 .eqv    PrintFloat      2       # fa0 = float to print; n/a
 .eqv    PrintDouble     3       # fa0 = double to print; n/a
