@@ -1,0 +1,20 @@
+if [[ $# -ne 1 ]]; then
+    echo "Usage: $0 <filename>" >&2
+    exit 1
+fi
+
+file="$1"
+
+if [[ ! -f "$file" ]]; then
+    echo "Error: '$file' is not an exisitng regular file" >&2
+    exit 1
+fi
+
+case "${file,,}" in
+	*.asm)	highlight -O rtf --line-numbers -S ./assembler.lang --style ../fineblue.theme ${file} > ${file}.rtf ;;
+	*.c)	highlight -O rtf --line-numbers --style=fineblue ${file} > ${file}.rtf ;;
+	*)	echo "Error: '$file' is not supported (need .asm or .c)" >&2
+		exit 1
+		;;
+esac
+

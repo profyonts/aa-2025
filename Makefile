@@ -1,7 +1,16 @@
-all: hello
-hello: hello.o
-	ld -o $@ $<
-hello.o: hello_linux_x64.asm
-	nasm -f elf64 $< -o $@
+CC      := gcc
+CFLAGS  := --std=c17
+
+SRCS    := compute.c \
+			student.c
+
+BINS    := $(SRCS:.c=)
+
+.PHONY: all clean
+all: $(BINS)
+
+%: %.c
+	$(CC) $(CFLAGS) -o $@ $<
+
 clean:
-	rm -f hello hello.o
+	rm -f $(BINS)
