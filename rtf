@@ -11,7 +11,7 @@ if [[ ! -f "$file" ]]; then
 fi
 
 case "${file,,}" in
-	*.asm)	highlight -O rtf --line-numbers -S ./assembler.lang --style ../fineblue.theme ${file} > ${file}.rtf ;;
+	*.asm)	highlight -O rtf --line-numbers -S ../assembler.lang --style ../fineblue.theme ${file} > ${file}.rtf ;;
 	*.c)	highlight -O rtf --line-numbers --style=fineblue ${file} > ${file}.rtf ;;
 	*)	echo "Error: '$file' is not supported (need .asm or .c)" >&2
 		exit 1
